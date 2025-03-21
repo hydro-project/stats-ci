@@ -28,6 +28,7 @@ use num_traits::Float;
 /// assert_ne!(naive, repetitions as f32 * 0.1);
 /// ```
 #[derive(Debug, Clone, Copy)]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct KahanSum<T: Float> {
     sum: T,
     compensation: T,
